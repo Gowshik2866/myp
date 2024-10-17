@@ -8,14 +8,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const message = userInput.value.trim();
       if (!message) return;
 
-      // Add user message to chat
+      
       addMessageToChat('You', message);
 
-      // Clear input
+      
       userInput.value = '';
 
       try {
-          // Send message to server
+          
           const response = await fetch('/api/chat', {
               method: 'POST',
               headers: {
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
           const data = await response.json();
           
-          // Add bot response to chat
+          
           addMessageToChat('Bot', data.response);
       } catch (error) {
           console.error('Error:', error);
